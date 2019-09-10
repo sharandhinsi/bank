@@ -1,0 +1,36 @@
+<div>
+    <h3>
+        <fieldset style="text-align: center; background-color:gray">Bank search Application </fieldset>
+    </h3>
+    <select>
+        <option>BANGALORE</option>
+        <option>MUMBAI</option>
+        <option>KOLKATA</option>
+        <option>DELHI</option>
+        <option>CUTTACK</option>
+    </select>
+    <div style="float: right">Search:<input [(ngModel)]="term" type="text" placeholder="text" /></div>
+</div>
+<hr>
+<button (click)="search()">BANGALORE</button>
+<button (click)="search1()">MUMBAI</button>
+<button (click)="search2()">KOLKATA</button>
+<button (click)="search3()">DELHI</button>
+<button (click)="search4()">CUTTACK</button>
+<hr>
+<table>
+    <tr>
+        <td>Action</td>
+        <td>Bank name</td>
+        <td>Ifsc</td>
+        <td>bank id</td>
+        <td>branch</td>
+    </tr>
+    <tr *ngFor='let a of list|filter:term; let i = index'>
+        <td>{{i+1}}</td>
+        <td>{{a.bank_name}}</td>
+        <td>{{a.ifsc}}</td>
+        <td>{{a.bank_id}}</td>
+        <td>{{a.branch}}</td>
+    </tr>
+</table>
